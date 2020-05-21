@@ -1,3 +1,33 @@
+:root {
+  --primary-clr: #333;
+  --bk-clr: #d9d9d9;
+  --app-border-clr: #333;
+  --app-bk-clr: #f4f4f4;
+  --side-padding: 0.5rem;
+
+  /* App Bar */
+  --app-bar-bk-clr: var(--primary-clr);
+  --app-bar-content-clr: #f0f0f0;
+  --app-bar-content-hover-clr: #bbb;
+
+  /* Bottom Bar */
+  --bottom-bar-bk-clr: #eaeaea;
+  --bottom-bar-hover-bk-clr: #e0e0e0;
+  --bottom-bar-active-bk-clr: #d1d1d1;
+  --bottom-bar-border-clr: #e0e0e0;
+  --bottom-bar-text-clr: #333;
+
+  /* To-do List */
+  --todo-list-bk-clr: #fff;
+  --todo-list-item-bk-clr: #fff;
+  --todo-list-item-hover-bk-clr: #f5f5f5;
+  --todo-list-item-content-clr: #333;
+  --todo-list-item-description-focus-bk-clr: #eee;
+  --todo-list-item-delete-btn-clr: #777;
+  --todo-list-item-delete-btn-hover-clr: #aaa;
+  --todo-list-divider-clr: #dedede;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +35,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bk-clr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
 }
 
 code {

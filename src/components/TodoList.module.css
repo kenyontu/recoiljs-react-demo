@@ -1,0 +1,78 @@
+.todoList {
+  display: flex;
+  background-color: var(--todo-list-bk-clr);
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem var(--side-padding);
+}
+
+.todoItem > input[type='checkbox'] {
+  margin-right: 0.3rem;
+}
+
+.todoItem + .todoItem {
+  border-top: 1px solid var(--todo-list-divider-clr);
+}
+
+.todoItem:hover > .deleteBtn,
+.todoItem:focus-within > .deleteBtn {
+  display: unset;
+}
+
+.description {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  padding: 0.3rem;
+  margin: 0 0.3rem;
+  outline: none;
+}
+
+.description:focus {
+  background-color: var(--todo-list-item-description-focus-bk-clr);
+}
+
+.deleteBtn {
+  --line-width: 2px;
+  --line-height: 1rem;
+  display: none;
+  height: 1rem;
+  width: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.deleteBtn::before {
+  content: '';
+  position: absolute;
+  left: calc(50% - var(--line-width) / 2);
+  background-color: var(--todo-list-item-delete-btn-clr);
+  width: var(--line-width);
+  height: var(--line-height);
+  border-radius: 0.1rem;
+  transform: rotate(45deg);
+}
+
+.deleteBtn::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - var(--line-width) / 2);
+  width: var(--line-height);
+  height: var(--line-width);
+  background-color: var(--todo-list-item-delete-btn-clr);
+  border-radius: 0.1rem;
+  transform: rotate(45deg);
+}
+
+.deleteBtn:hover::before,
+.deleteBtn:hover::after {
+  background-color: var(--todo-list-item-delete-btn-hover-clr);
+  transition: background-color 100ms ease-in;
+}
