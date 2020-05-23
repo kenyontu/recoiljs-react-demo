@@ -1,22 +1,35 @@
 .container {
   display: flex;
-  background-color: var(--bottom-bar-bk-clr);
-  border-top: 1px solid var(--bottom-bar-border-clr);
+  justify-content: space-between;
+  background-color: var(--filter-bar-bk-clr);
+  padding: 0.3rem;
 }
 
 .filter {
   flex: 1;
+  padding: 0 0.5rem;
+}
+
+.filterIndicator {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 0.6rem 0;
+  border-radius: 2rem;
+  padding: 0.3rem 1rem;
   cursor: pointer;
 }
 
-.filter:not(.activeFilter):hover {
-  background-color: var(--bottom-bar-hover-bk-clr);
+.filterIndicator:not(.active):hover {
+  background-color: var(--filter-bar-indicator-hover-bk-clr);
 }
 
-.activeFilter {
-  background-color: var(--bottom-bar-active-bk-clr);
+.filterIndicator.active {
+  background-color: var(--filter-bar-indicator-active-bk-clr);
+}
+
+.filterName {
+  color: var(--filter-bar-filter-name-clr);
+}
+
+.filterName.active {
+  color: var(--filter-bar-filter-name-active-clr);
 }

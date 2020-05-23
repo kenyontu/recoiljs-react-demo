@@ -7,7 +7,7 @@ import {
   useSetRecoilState,
 } from 'recoil'
 import debounce from 'lodash/debounce'
-import produce from 'immer'
+import shortid from 'shortid'
 
 import * as todosApi from '../utils/api/todosApi'
 
@@ -52,18 +52,15 @@ export const useFetchTodos = () => {
   const setTodos = useSetRecoilState(todosState)
   const setIsFetching = useSetRecoilState(isFetchingTodosState)
 
-  const fetchTodos = useCallback(() => {
-    const fetch = async () => {
-      setIsFetching(true)
-      const result = await todosApi.fetchTodos().catch((error) => {})
+  const fetchTodos = useCallback(async () => {
+    setIsFetching(true)
+    const result = await todosApi.fetchTodos().catch((error) => {})
 
-      if (result) {
-        setTodos(result)
-      }
-
-      setIsFetching(false)
+    if (result) {
+      setTodos(result)
     }
-    fetch()
+
+    setIsFetching(false)
   }, [setIsFetching, setTodos])
 
   return fetchTodos
@@ -87,17 +84,13 @@ export const useCreateTodo = () => {
   const setTodos = useSetRecoilState(todosState)
 
   const createTodo = useCallback(
-    (todo) => {
-      const create = async () => {
-        const result = await todosApi.createTodo(todo).catch((error) => {
-          // TODO: handle error
-        })
+    async (description) => {
+      const todo = { id: shortid(), description, isDone: false }
+      const result = await todosApi.createTodo(todo)
 
-        if (result) {
-          setTodos((todos) => [...todos, result])
-        }
+      if (result) {
+        setTodos((todos) => [...todos, result])
       }
-      create()
     },
     [setTodos]
   )
@@ -111,7 +104,7 @@ export const useUpdateTodo = () => {
 
   if (!updateApiCallRef.current) {
     updateApiCallRef.current = debounce((todo) => {
-      todosApi.updateTodo(todo).then(() => console.log('updated'))
+      todosApi.updateTodo(todo)
     }, 2000)
   }
 

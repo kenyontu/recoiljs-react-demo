@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  padding: 0.5rem var(--side-padding);
+  background-color: var(--create-bar-bk-clr);
+  border-top: 1px solid var(--create-bar-border-clr);
+}
+
+.description {
+  flex: 1;
+  background-color: var(--create-bar-description-bk-clr);
+  padding: 0.4rem 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  outline: none;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.createBtn {
+  align-self: stretch;
+  background-color: var(--create-bar-create-btn-bk-clr);
+  color: var(--create-bar-create-btn-clr);
+  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
+  border: 0;
+  border-radius: 0.3rem;
+  outline: none;
+}
+
+.createBtn:hover {
+  background-color: var(--create-bar-create-btn-hover-bk-clr);
+}

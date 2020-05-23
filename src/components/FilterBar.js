@@ -6,11 +6,19 @@ import { useTodoFilter, todoFilters } from '../state/todos'
 
 const FilterOption = ({ name, active = false, onClick }) => {
   return (
-    <div
-      className={classNames(styles.filter, { [styles.activeFilter]: active })}
-      onClick={onClick}
-    >
-      <span>{name}</span>
+    <div className={styles.filter}>
+      <div
+        className={classNames(styles.filterIndicator, {
+          [styles.active]: active,
+        })}
+        onClick={onClick}
+      >
+        <span
+          className={classNames(styles.filterName, { [styles.active]: active })}
+        >
+          {name}
+        </span>
+      </div>
     </div>
   )
 }

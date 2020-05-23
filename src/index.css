@@ -1,21 +1,29 @@
 :root {
-  --primary-clr: #333;
-  --bk-clr: #d9d9d9;
-  --app-border-clr: #333;
+  --primary-clr: #45bcfa;
+  --bk-clr: #fdfdfd;
   --app-bk-clr: #f4f4f4;
+  --app-shadow-clr: rgba(0, 0, 0, 0.3);
   --side-padding: 0.5rem;
 
   /* App Bar */
   --app-bar-bk-clr: var(--primary-clr);
-  --app-bar-content-clr: #f0f0f0;
+  --app-bar-content-clr: #fff;
   --app-bar-content-hover-clr: #bbb;
 
-  /* Bottom Bar */
-  --bottom-bar-bk-clr: #eaeaea;
-  --bottom-bar-hover-bk-clr: #e0e0e0;
-  --bottom-bar-active-bk-clr: #d1d1d1;
-  --bottom-bar-border-clr: #e0e0e0;
-  --bottom-bar-text-clr: #333;
+  /* Filter Bar */
+  --filter-bar-bk-clr: var(--primary-clr);
+  --filter-bar-indicator-active-bk-clr: #fff;
+  --filter-bar-indicator-hover-bk-clr: rgba(255, 255, 255, 0.3);
+  --filter-bar-filter-name-clr: #fff;
+  --filter-bar-filter-name-active-clr: #333;
+
+  /* Create To-do bar */
+  --create-bar-bk-clr: #fefefe;
+  --create-bar-description-bk-clr: #eee;
+  --create-bar-create-btn-bk-clr: #58c77a;
+  --create-bar-create-btn-hover-bk-clr: #4cba6e;
+  --create-bar-create-btn-clr: #fff;
+  --create-bar-border-clr: #ddd;
 
   /* To-do List */
   --todo-list-bk-clr: #fff;
